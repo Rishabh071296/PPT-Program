@@ -1,0 +1,113 @@
+Q.1 What’s difference between Synchronous and Asynchronous?++++++++++++++++++++++++++++++++++++++++
+Answer-
+Synchronous data transmission is a data transfer method in which a continuous stream of data signals is accompanied by timing signals.	
+Synchronous handler do not return until it finishes processing the HTTP request for which it is called.	
+Users need to wait until it sending finishes before getting a response from the server.	
+In this transmission method, blocks of characters are transmitted at high- speed on the transmission line.	
+
+Asynchronous data transmission is a data transfer method in which the sender and the receiver use the flow control method.
+Asynchronous handler helps you to run a process independently of sending a response to the user.
+Users do not have to wait until sending completes before receiving a response from the server.
+In asynchronous transmission, the information should be transmitted character by character.
+
+Q.2 What are Web Apis ?+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Answer- Web API as the name suggests, is an API over the web which can be accessed using HTTP protocol. It is a concept and not a technology. We can build Web API using different technologies such as Java, .NET etc. For example, Twitter's REST APIs provide programmatic access to read and write data using which we can integrate twitter's capabilities into our own application.
+
+Q.3 Explain SetTimeOut and setInterval ? +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Answer- 
+setTimeout-
+The setTimeout Javascript method is used to call a function after a certain period of time. The time after which the function will be called is given by the user in milliseconds.
+Syntax-
+let timerID = setTimeout(func, delay).
+
+setInterval-
+The setInterval Javascript method is used to call a function repeatedly at a specified interval of time. This time interval at which the function will be called is provided by the user in milliseconds.
+
+Syntax-
+let intervalID = setInterval(func, delay)
+
+Q.4 how can you handle Async code in JavaScript ? ++++++++++++++++++++++++++++++++++++++++++++++++
+
+Answer- “Callback” is a word you have heard in real life: you call a friend, but your friend does not pick up the phone. You reach their voicemail and leave them a message to call you back. Your friend hears the message and, let's say two hours later, they call you back. The concept is the same in programming and JavaScript, especially with asynchronous execution.
+Promises: Promises provide a more structured and powerful way to handle asynchronous code. Promises represent the eventual completion or failure of an asynchronous operation and allow you to chain operations using .then() and handle errors with .catch().
+Async/await: Async/await is a more modern and readable syntax for handling asynchronous code. It is built on top of promises and provides a synchronous-like flow. The async keyword is used to define an asynchronous function, and the await keyword is used to pause the execution until a promise is resolved or rejected.
+
+Q.5 What are Callbacks &  Callback Hell ? ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Answer- 
+Callback- A callback is a function that is to be executed after another function has finished execution.
+
+Callback Hell- It is nested callbacks stacked below one another forming a pyramid kind of structurs.
+
+Q.6 What are Promises & Explain Some Three Methods of Promise?++++++++++++++++++++++++++++++++++++
+
+Answer- promise is an object that represents the eventual completion or failure of an asynchronous operation. It is a placeholder for the result of the operation, which may not be available immediately. The primary purpose of promises is to provide a structured way to handle asynchronous code and avoid callback hell.
+
+1- Promise.all() Method :- The Promise.all() method accepts an iterable Object, such as an Array of promises as an input and returns a single promise that resolves to a result array of the input promises.
+
+2- Promise.any() Method :- The Promise.any() takes an iterable Object, such as an Array of promises as an input. Once a promise is fulfilled, a single promise is returned and the promise is resolved using the value of the promise.
+
+3- Promise.race() Method :-The Promise.race() method returns a Promise that is resolved or rejected, as soon as one of the promises in an iterable, such as an array, fulfills or rejects, with the value or reason from that Promise.
+
+Q.7 What’s async & await Keyword in JavaScript?++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Answer- An async function is a function that is declared with the async keyword and allows the await keyword inside it. The async and await keywords allow asynchronous, promise-based behavior to be written more easily and avoid configured promise chains. The async keyword may be used with any of the methods for creating a function.
+Keyword- 
+Async function myfirstfunction() {  
+return "Hello World"  
+}  
+
+JavaScript Await function is used to wait for the promise. It could only be used inside the async block. It instructs the code to wait until the promise returns a response. It only delays the async block. 
+Keyword-
+// Await function works only inside the async function  
+let value = await promise;  
+
+Q.8 Explain Purpose of Try and Catch Block & Why do we need it? ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Answer- Try block: The code that may potentially throw an exception is enclosed within a try block. This allows you to specify the section of code that needs to be monitored for exceptions.
+
+Catch block: If an exception is thrown within the try block, it is caught by a corresponding catch block. The catch block contains the code that handles the exception. It allows you to gracefully respond to the exception, providing a way to recover from the error or perform alternative actions.
+
+By using try-catch blocks, you can prevent your program from abruptly crashing or terminating when an exception occurs. Instead, you have the opportunity to handle the exception in a controlled manner. This can involve displaying an error message to the user, logging the error for later analysis, retrying the operation, or any other appropriate action.
+The need for try-catch blocks arises from the fact that software systems are often complex and interact with various external resources. Errors and exceptions can happen due to a multitude of reasons, such as invalid user input, hardware failures, network issues, or unexpected system states. By using try-catch blocks, you can create more robust and reliable software by gracefully handling these exceptions, improving the overall stability and user experience.
+
+Q.9 Explain fetch?+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Answer- The fetch() method in JavaScript is used to request data from a server. The request can be of any type of API that returns the data in JSON or XML. The fetch() method requires one parameter, the URL to request, and returns a promise.
+Syntax-
+fetch(URL, options);
+The fetch() method accepts the following two parameters.
+URL: The URL on which the request is to be made.
+Options: An object which consists of additional properties that can be sent to the server. It is optional.
+
+Q.10 How do you define an asynchronous function in JavaScript using async/await?+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Answer- Use the async keyword before the function declaration. This indicates that the function will return a promise and can use the await keyword within its body.
+Define the function using the function keyword or as an arrow function.
+Within the function body, use the await keyword to pause the execution of the function until a promise is resolved or rejected. The await keyword can only be used inside an async function.
+The function can perform asynchronous operations such as making API calls, querying databases, or reading files. These operations should return promises.
+Use try/catch blocks to handle any errors that may occur during the execution of the asynchronous operations.
+Syntax-
+async function fetchData() {
+  try {
+    const response = await fetch('https://api.example.com/data');
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}.
+
+
+
+
+
+
+
+
+
+
+
+
