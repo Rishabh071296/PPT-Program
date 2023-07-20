@@ -3,7 +3,7 @@
     padding: 0;
     outline: none;
     box-sizing: border-box;
-    color: white;
+    color: rgb(83, 76, 6);
     overflow-x: hidden;
 }
 
@@ -24,7 +24,7 @@ input {
 }
 
 #data-btn {
-    background-color: #040459;
+    background-color: #379260;
     color: white;
     padding: 10px 40px;
     font-size: 16px;
@@ -32,7 +32,7 @@ input {
 }
 
 #data-btn:hover {
-    background-color: #00002b;
+    background-color: #8c0830;
     padding: 10px 33px;
 }
 
@@ -60,7 +60,7 @@ input {
 
 .profile-info {
     display: flex;
-    background-color: #1313b9;
+    background-color: #250525cf;
     border-radius: 10px;
     margin: 10px 10px;
     padding: 20px 10px;
@@ -91,7 +91,7 @@ label {
 
 .repository p {
     font-size: 14px;
-    color: #ff2f44;
+    color: #075f32;
     margin: 10px 0;
 }
 
